@@ -55,7 +55,7 @@ export const useMangaCollection = ({ token, filters, pageSize = 8 }) => {
         fetchStats(),
       ])
     } catch (requestError) {
-      setError(requestError.response?.data?.message || 'Khong the tai du lieu manga.')
+      setError(requestError.response?.data?.message || 'Không thể tải dữ liệu manga.')
     } finally {
       setLoading(false)
     }
@@ -75,7 +75,7 @@ export const useMangaCollection = ({ token, filters, pageSize = 8 }) => {
         append: true,
       })
     } catch (requestError) {
-      setError(requestError.response?.data?.message || 'Khong the tai them manga.')
+      setError(requestError.response?.data?.message || 'Không thể tải thêm manga.')
     } finally {
       setLoadingMore(false)
     }
@@ -95,7 +95,7 @@ export const useMangaCollection = ({ token, filters, pageSize = 8 }) => {
       await refresh()
       return true
     } catch (requestError) {
-      setError(requestError.response?.data?.message || 'Khong the luu manga.')
+      setError(requestError.response?.data?.message || 'Không thể lưu manga.')
       return false
     } finally {
       setSaving(false)
@@ -108,7 +108,7 @@ export const useMangaCollection = ({ token, filters, pageSize = 8 }) => {
       await refresh()
       return true
     } catch (requestError) {
-      setError(requestError.response?.data?.message || 'Khong the xoa manga.')
+      setError(requestError.response?.data?.message || 'Không thể xóa manga.')
       return false
     }
   }, [refresh])

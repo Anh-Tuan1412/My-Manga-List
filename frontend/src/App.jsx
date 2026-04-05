@@ -124,7 +124,7 @@ function App() {
   }
 
   const handleDelete = async (id) => {
-    const confirmed = window.confirm('Ban chac chan muon xoa manga nay?')
+    const confirmed = window.confirm('Bạn chắc chắn muốn xóa manga này?')
     if (!confirmed) {
       return
     }
@@ -169,7 +169,7 @@ function App() {
     return (
       <main className="auth-shell">
         <section className="auth-card">
-          <h1>Dang khoi tao...</h1>
+          <h1>Đang khởi tạo...</h1>
         </section>
       </main>
     )

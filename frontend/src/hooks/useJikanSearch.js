@@ -31,7 +31,7 @@ export const useJikanSearch = ({ token }) => {
 
         setResults(Array.isArray(response.data) ? response.data : [])
       } catch (requestError) {
-        setError(requestError.response?.data?.message || 'Khong tim thay du lieu Jikan.')
+        setError(requestError.response?.data?.message || 'Không tìm thấy dữ liệu Jikan.')
       } finally {
         setLoading(false)
       }

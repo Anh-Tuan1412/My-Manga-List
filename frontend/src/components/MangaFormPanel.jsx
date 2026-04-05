@@ -3,15 +3,15 @@ import { STATUS_OPTIONS } from '../constants/manga'
 function MangaFormPanel({ form, editingId, saving, onChange, onSubmit, onReset }) {
   return (
     <article className="panel">
-      <h2>{editingId ? 'Cap nhat manga' : 'Them manga moi'}</h2>
+      <h2>{editingId ? 'Cập nhật manga' : 'Thêm manga mới'}</h2>
       <form onSubmit={onSubmit} className="stack-form">
         <label>
-          Ten manga
+          Tên manga
           <input name="title" value={form.title} onChange={onChange} placeholder="One Piece" required />
         </label>
 
         <label>
-          Tac gia (ngan cach dau phay)
+          Tác giả (ngăn cách dấu phẩy)
           <input
             name="authors"
             value={form.authors}
@@ -21,7 +21,7 @@ function MangaFormPanel({ form, editingId, saving, onChange, onSubmit, onReset }
         </label>
 
         <label>
-          The loai (ngan cach dau phay)
+          Thể loại (ngăn cách dấu phẩy)
           <input
             name="genres"
             value={form.genres}
@@ -31,39 +31,39 @@ function MangaFormPanel({ form, editingId, saving, onChange, onSubmit, onReset }
         </label>
 
         <label>
-          Link anh bia
+          Link ảnh bìa
           <input name="coverImage" value={form.coverImage} onChange={onChange} placeholder="https://..." />
         </label>
 
         <label>
-          Tom tat
+          Tóm tắt
           <textarea
             name="synopsis"
             value={form.synopsis}
             onChange={onChange}
             rows={4}
-            placeholder="Noi dung chinh cua manga"
+            placeholder="Nội dung chính của manga"
           />
         </label>
 
         <div className="number-grid">
           <label>
-            Tong tap
+            Tổng tập
             <input type="number" min="0" name="totalChapters" value={form.totalChapters} onChange={onChange} />
           </label>
 
           <label>
-            Da so huu
+            Đã sở hữu
             <input type="number" min="0" name="ownedChapters" value={form.ownedChapters} onChange={onChange} />
           </label>
 
           <label>
-            Danh gia (0-10)
+            Đánh giá (0-10)
             <input type="number" min="0" max="10" step="0.5" name="rating" value={form.rating} onChange={onChange} />
           </label>
 
           <label>
-            Trang thai
+            Trạng thái
             <select name="status" value={form.status} onChange={onChange}>
               {STATUS_OPTIONS.map((item) => (
                 <option key={item.value} value={item.value}>
@@ -75,7 +75,7 @@ function MangaFormPanel({ form, editingId, saving, onChange, onSubmit, onReset }
         </div>
 
         <label>
-          Gia du kien (VND)
+          Giá dự kiến (VND)
           <input
             type="number"
             min="0"
@@ -88,11 +88,11 @@ function MangaFormPanel({ form, editingId, saving, onChange, onSubmit, onReset }
 
         <div className="button-row">
           <button className="primary-btn" type="submit" disabled={saving}>
-            {saving ? 'Dang luu...' : editingId ? 'Luu thay doi' : 'Them manga'}
+            {saving ? 'Đang lưu...' : editingId ? 'Lưu thay đổi' : 'Thêm manga'}
           </button>
           {editingId && (
             <button className="ghost-btn" type="button" onClick={onReset}>
-              Huy sua
+              Hủy sửa
             </button>
           )}
         </div>

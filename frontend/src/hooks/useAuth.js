@@ -80,7 +80,18 @@ export const useAuth = () => {
       handleSuccessAuth(response.data)
       return true
     } catch (requestError) {
-      setError(requestError.response?.data?.message || 'Dang nhap that bai.')
+      const serverMessage = requestError.response?.data?.message
+      if (serverMessage) {
+        setError(serverMessage)
+        return false
+      }
+
+      if (requestError.request) {
+        setError('Không kết nối được backend hoặc bị chặn CORS. Kiểm tra backend đang chạy và CORS_ORIGIN.')
+        return false
+      }
+
+      setError('Đăng nhập thất bại.')
       return false
     } finally {
       setSubmitting(false)
@@ -98,7 +109,18 @@ export const useAuth = () => {
       handleSuccessAuth(response.data)
       return true
     } catch (requestError) {
-      setError(requestError.response?.data?.message || 'Dang ky that bai.')
+      const serverMessage = requestError.response?.data?.message
+      if (serverMessage) {
+        setError(serverMessage)
+        return false
+      }
+
+      if (requestError.request) {
+        setError('Không kết nối được backend hoặc bị chặn CORS. Kiểm tra backend đang chạy và CORS_ORIGIN.')
+        return false
+      }
+
+      setError('Đăng ký thất bại.')
       return false
     } finally {
       setSubmitting(false)

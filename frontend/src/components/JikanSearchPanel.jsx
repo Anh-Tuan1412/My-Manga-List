@@ -1,9 +1,9 @@
 function JikanSearchPanel({ query, loading, results, onQueryChange, onPick }) {
   return (
     <article className="panel">
-      <h2>Tim nhanh tu Jikan API</h2>
-      <input value={query} onChange={(event) => onQueryChange(event.target.value)} placeholder="Nhap ten manga de tim" />
-      {loading && <p className="mini-note">Dang tim kiem...</p>}
+      <h2>Tìm nhanh từ Jikan API</h2>
+      <input value={query} onChange={(event) => onQueryChange(event.target.value)} placeholder="Nhập tên manga để tìm" />
+      {loading && <p className="mini-note">Đang tìm kiếm...</p>}
       <div className="jikan-list">
         {results.map((item) => (
           <div className="jikan-item" key={item.jikanId}>
@@ -12,7 +12,7 @@ function JikanSearchPanel({ query, loading, results, onQueryChange, onPick }) {
               <strong>{item.title}</strong>
               <p>{(item.synopsis || '').slice(0, 120)}...</p>
               <button className="ghost-btn" type="button" onClick={() => onPick(item)}>
-                Chon vao form
+                Chọn vào form
               </button>
             </div>
           </div>

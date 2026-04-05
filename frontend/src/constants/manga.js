@@ -1,14 +1,14 @@
 export const STATUS_OPTIONS = [
-  { label: 'Dang doc', value: 'reading' },
-  { label: 'Da doc', value: 'completed' },
-  { label: 'Muon mua', value: 'wishlist' },
+  { label: 'Đang đọc', value: 'reading' },
+  { label: 'Đã đọc', value: 'completed' },
+  { label: 'Muốn mua', value: 'wishlist' },
 ]
 
 export const SORT_OPTIONS = [
-  { label: 'Moi them', value: 'createdAt' },
-  { label: 'Danh gia', value: 'rating' },
-  { label: 'Tien do doc', value: 'progress' },
-  { label: 'Ten truyen', value: 'title' },
+  { label: 'Mới thêm', value: 'createdAt' },
+  { label: 'Đánh giá', value: 'rating' },
+  { label: 'Tiến độ đọc', value: 'progress' },
+  { label: 'Tên truyện', value: 'title' },
 ]
 
 export const PIE_COLORS = ['#ff7a59', '#ffd166', '#5f9df7', '#2ec4b6', '#b9f18c', '#ff99c8']

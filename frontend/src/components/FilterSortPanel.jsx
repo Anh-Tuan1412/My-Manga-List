@@ -10,16 +10,16 @@ function FilterSortPanel({ filters, genreOptions, onFiltersChange }) {
 
   return (
     <article className="panel">
-      <h2>Filter and Sort</h2>
+      <h2>Lọc và sắp xếp</h2>
       <div className="filter-grid">
         <label>
-          Tim theo ten
+          Tìm theo tên
           <input value={filters.search} onChange={handleChange('search')} placeholder="Bleach" />
         </label>
         <label>
-          Trang thai
+          Trạng thái
           <select value={filters.status} onChange={handleChange('status')}>
-            <option value="all">Tat ca</option>
+            <option value="all">Tất cả</option>
             {STATUS_OPTIONS.map((item) => (
               <option key={item.value} value={item.value}>
                 {item.label}
@@ -28,9 +28,9 @@ function FilterSortPanel({ filters, genreOptions, onFiltersChange }) {
           </select>
         </label>
         <label>
-          The loai
+          Thể loại
           <select value={filters.genre} onChange={handleChange('genre')}>
-            <option value="all">Tat ca</option>
+            <option value="all">Tất cả</option>
             {genreOptions.map((genre) => (
               <option key={genre} value={genre}>
                 {genre}
@@ -39,7 +39,7 @@ function FilterSortPanel({ filters, genreOptions, onFiltersChange }) {
           </select>
         </label>
         <label>
-          Sap xep
+          Sắp xếp
           <select value={filters.sortBy} onChange={handleChange('sortBy')}>
             {SORT_OPTIONS.map((item) => (
               <option key={item.value} value={item.value}>
@@ -49,10 +49,10 @@ function FilterSortPanel({ filters, genreOptions, onFiltersChange }) {
           </select>
         </label>
         <label>
-          Thu tu
+          Thứ tự
           <select value={filters.order} onChange={handleChange('order')}>
-            <option value="desc">Giam dan</option>
-            <option value="asc">Tang dan</option>
+            <option value="desc">Giảm dần</option>
+            <option value="asc">Tăng dần</option>
           </select>
         </label>
       </div>

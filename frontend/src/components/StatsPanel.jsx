@@ -13,9 +13,9 @@ function StatsPanel({ stats, displayCount }) {
   return (
     <article className="panel stats-panel">
       <div>
-        <h2>Thong ke bo suu tap</h2>
-        <p className="mini-note">Tong manga hien thi: {displayCount}</p>
-        <p className="cost">Wishlist du kien: {formatCurrency(stats.wishlistTotalCost)}</p>
+        <h2>Thống kê bộ sưu tập</h2>
+        <p className="mini-note">Tổng manga hiển thị: {displayCount}</p>
+        <p className="cost">Wishlist dự kiến: {formatCurrency(stats.wishlistTotalCost)}</p>
       </div>
       <div className="chart-wrap">
         <ResponsiveContainer width="100%" height={250}>

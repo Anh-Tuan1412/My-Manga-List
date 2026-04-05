@@ -11,11 +11,11 @@ function MangaListPanel({
 }) {
   return (
     <article className="panel">
-      <h2>Danh sach manga</h2>
-      {loading ? <p className="mini-note">Dang tai du lieu...</p> : null}
+      <h2>Danh sách manga</h2>
+      {loading ? <p className="mini-note">Đang tải dữ liệu...</p> : null}
 
       {!loading && items.length === 0 ? (
-        <p className="mini-note">Chua co manga nao phu hop bo loc.</p>
+        <p className="mini-note">Chưa có manga nào phù hợp bộ lọc.</p>
       ) : (
         <>
           <div className="manga-list">
@@ -37,15 +37,15 @@ function MangaListPanel({
                       <span className={`status-tag status-${item.status}`}>{item.status}</span>
                     </div>
 
-                    <p className="meta">Tac gia: {(item.authors || []).join(', ') || 'N/A'}</p>
-                    <p className="meta">Danh gia: {item.rating}/10</p>
+                    <p className="meta">Tác giả: {(item.authors || []).join(', ') || 'N/A'}</p>
+                    <p className="meta">Đánh giá: {item.rating}/10</p>
 
                     <div className="progress-row">
                       <div className="progress-track">
                         <div className="progress-fill" style={{ width: `${progress}%` }} />
                       </div>
                       <span>
-                        {item.ownedChapters}/{item.totalChapters || '?'} tap
+                        {item.ownedChapters}/{item.totalChapters || '?'} tập
                       </span>
                     </div>
 
@@ -60,17 +60,17 @@ function MangaListPanel({
                     )}
 
                     {item.status === 'wishlist' && (
-                      <p className="wishlist-price">Gia du kien: {formatCurrency(item.priceEstimate)}</p>
+                      <p className="wishlist-price">Giá dự kiến: {formatCurrency(item.priceEstimate)}</p>
                     )}
 
-                    <p className="synopsis">{item.synopsis || 'Chua co mo ta.'}</p>
+                    <p className="synopsis">{item.synopsis || 'Chưa có mô tả.'}</p>
 
                     <div className="button-row">
                       <button className="ghost-btn" type="button" onClick={() => onEdit(item)}>
-                        Sua
+                        Sửa
                       </button>
                       <button className="danger-btn" type="button" onClick={() => onDelete(item._id)}>
-                        Xoa
+                        Xóa
                       </button>
                     </div>
                   </div>
@@ -80,8 +80,8 @@ function MangaListPanel({
           </div>
 
           <div ref={infiniteRef} className="infinite-sentinel" />
-          {loadingMore && <p className="mini-note">Dang tai them...</p>}
-          {!hasMore && items.length > 0 && <p className="mini-note">Da hien thi tat ca manga.</p>}
+          {loadingMore && <p className="mini-note">Đang tải thêm...</p>}
+          {!hasMore && items.length > 0 && <p className="mini-note">Đã hiển thị tất cả manga.</p>}
         </>
       )}
     </article>
